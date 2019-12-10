@@ -2,3 +2,7 @@
     box-sizing: border-box;
 }
 
+.viewfinder{
+    width:320px; 
+    height:240px;
+}

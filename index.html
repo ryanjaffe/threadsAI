@@ -54,21 +54,28 @@
             <h2 class="photo-subheading">
                 Take a photo of the clothing!
             </h2>
+
             <div class="viewfinder js-viewfinder">
             </div>
-            <button class="photo-button js-photo-button">
-                Take Photo
+
+            <h2 class="preview-heading">
+                    Does the photo look accurate?
+            </h2>
+
+            <div id="my_result"></div>
+    
+            <a href="javascript:void(take_snapshot())" 
+                class="photo-button js-photo-button">
+                Take/Retake Photo
+            </a>
+            <button class="photo-approved js-photo-approved">
+                Looks Great
             </button>
             <button class="instructions-button js-instructions-button">
                 Instructions
             </button>
         </section>
         <section class="preview-screen js-preview-screen">
-            <h2 class="preview-subheading">
-                Does the photo look accurate?
-            </h2>
-            <div class="preview-image js-preview-image">
-            </div>
             <button class="photo-approved js-photo-approved">
                 Looks Great
             </button>
@@ -149,6 +156,7 @@
         </section>
 
     </main>
+    <script src="webcam.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
