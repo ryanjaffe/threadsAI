@@ -10,6 +10,103 @@ function renderHome(){
     $('.js-palette-display-screen').hide();
 
     handleGetStarted();
+}  
+
+function handleImageLinkButton(){
+    $('#js-find-colors').on('click',function(event){
+        event.preventDefault();
+        console.log("handleImageLinkButton fired");
+        let imageLink = $('#js-image-link-entry').val();
+        extractColors(extractionUrl,imageLink,extractionAuthorization);  
+    });
+}
+
+  
+function extractColors(extractionUrl,imageLink,extractionAuthorization) {
+    console.log(imageLink);
+    const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=0
+    extract_object_colors=1&overall_count=3`;
+  
+   const extractionHeaders = {
+        headers: new Headers({
+        'authorization' : extractionAuthorization,
+        })
+    };
+  
+    fetch(url, extractionHeaders,{
+    })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => displayResults(responseJson))
+        .then(responseJson => console.log(responseJson))
+        .catch(err => {
+            $('.js-error-message').show();
+            $('.js-error-message').text(`Something went wrong: ${err.message}`);
+    });
+    displayResults(responseJson);
+    // storeResults(responseJson);
+}
+
+function displayResults(responseJson) {
+    $('.js-extraction-list').empty();
+    for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
+        $('.js-extraction-list').append(`
+        <li>${responseJson.result.colors.foreground_colors[i].closest_palette_color}
+            <div style="background-color:${responseJson.result.colors.foreground_colors[i].
+                html_code}">
+            </div>
+        </li>
+        `)
+    };
+}
+
+// function storeResults(){
+//     extractionArray = [];
+//     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
+//         extractionArray.push(responseJson.result.colors.foreground_colors[i].
+//             html_code)
+//     }
+// }
+
+// function getFinalPalette(paletteChoice,paletteChoiceUrl){
+
+// }
+
+// function handlePaletteSubmit() {
+//     $('form').submit(event => {
+//       event.preventDefault();
+//       const paletteChoice = $('.js-palette-choice').val();
+//       getFinalPalette(paletteChoice);
+//     });
+//   }
+
+function handleInstructionsButton(){
+    $('.js-instructions-button').on('click',function(event){
+        $('.js-instructions-screen').show();
+        $('.js-photo-screen').hide();
+        $('.js-palette-select-screen').hide();   
+    });
+}
+
+function handleColorsApprovedButton(){
+    $('.js-colors-approved').on('click',function(event){
+        $('.js-photo-screen').hide();
+        $('.js-palette-select-screen ').show();
+    });
+    handleInstructionsButton();
+    handlePhotoButton();
+}
+
+function handlePhotoButton(){
+    $('.js-photo-button').on('click',function(event){
+        $('.js-instructions-screen').hide();
+        $('.js-palette-select-screen').hide();   
+        $('.js-photo-screen').show();
+    });
 }
 
 function handleGetStarted(){
@@ -17,61 +114,20 @@ function handleGetStarted(){
         $('.js-instructions-screen').hide();
         $('.js-preview-heading').hide();
         $('.js-photo-screen').show();
+        $('.js-photo-preview-heading').hide();
+        $('.js-error-message').hide();
+        $('.js-extracted-colors-heading').hide();
+        handleImageLinkButton();
     });
+    // remove handleColorsApprovedButton when api is fixed
+    // handleColorsApprovedButton();
+    // handleInstructionsButton();
 }
 
-Webcam.attach( '.js-viewfinder' );
-function take_snapshot() {
-    Webcam.snap( function(data_uri) {
-        document.getElementById('my_result').innerHTML = 
-        '<img src="'+data_uri+'"/>';
-        extractColors(data_uri);
-        console.log(data_uri);
-    } );
-    $('.js-preview-heading').show();
-    handlePhotoApprovedButton();
-}
+// put handleColorsApprovedButton in function displayResults when api is fixed
 
-
-function extractColors(data_uri) {
-    const url = `${extractionUrl}?image_url=${data_uri}&extract_overall_colors=0
-    extract_object_colors=1&overall_count=3`;
-  
-   const extractionHeaders = {
-        headers: new Headers({
-        'authorization' : extractionAuthorization
-        })
-    };
-  
-    fetch(extractionUrl, extractionHeaders)
-      .then(response => response.json())
-      .then(responseJson => console.log(responseJson));
-}  
-
-
-function handleInstructionsButton(){
-    $('.js-instructions-button').on('click',function(event){
-        $('.js-instructions-screen').show();
-        $('.js-photo-screen').hide();
-        $('.js-extraction-preview-screen').hide();   
-    });
-}
-
-function handlePhotoApprovedButton(){
-    $('.js-photo-approved').on('click',function(event){
-        $('.js-photo-screen').hide();
-        $('.js-extraction-preview-screen').show();
-    });
-    handlePhotoButton();
-}
-
-function handlePhotoButton(){
-    $('.js-photo-button').on('click',function(event){
-        $('.js-instructions-screen').hide();
-        $('.js-photo-screen').show();
-        $('.js-extraction-preview-screen').hide();   
-    });
-}
-
-handleInstructionsButton();
-renderHome();
+$(function() {
+    console.log("App loaded");
+    renderHome();
+    handleImageLinkButton();
+});

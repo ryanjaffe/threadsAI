@@ -60,23 +60,24 @@
         <section class="photo-screen js-photo-screen">
 
             <h2 class="photo-subheading">
-                Take a photo of the clothing!
+                Submit a link to the image!
             </h2>
 
-            <div class="viewfinder js-viewfinder">
-            </div>
+            <form id="image-link-form js-image-link-form">
+                    <label for="image-link-entry">Add an item</label>
+                    <input type="text" name="image-link-entry" id="js-image-link-entry" 
+                    placeholder="myimagefrominstagram.com">
+                    <button id="js-find-colors">Find Colors</button>
+                  </form>
+              
 
-            <h2 class="preview-heading js-preview-heading">
-                    Does the photo look accurate?
+            <h2 class="extracted-colors-heading js-extracted-colors-heading">
+                Extracted Colors:
             </h2>
 
-            <div id="my_result"></div>
+            <ul class="extraction-list js-extraction-list"></ul> -->
     
-            <a href="javascript:void(take_snapshot())" 
-                class="take-photo-button js-take-photo-button">
-                Take/Retake Photo
-            </a>
-            <button class="photo-approved js-photo-approved">
+            <button class="colors-approved js-colors-approved">
                 Looks Great
             </button>
             <button class="instructions-button js-instructions-button">
@@ -85,24 +86,12 @@
 
         </section>
 
-        <section class="extraction-preview-screen js-extraction-preview-screen">
-
-            <button class="extraction-approved js-extraction-approved">
-                Looks Great
-            </button>
-            <button class="photo-button js-photo-button">
-                    Retake Photo
-                </button>
-                <button class="instructions-button js-instructions-button">
-                    Instructions
-                </button>
-        </section>
         <section class="palette-select-screen js-palette-select-screen">
             <h2 class="palette-select-subheading">
                 What color scheme would you like?
             </h2>
-            <form class="palette-select-form js-palette-select-form"
-                <select name="palette-choice">
+            <form class="palette-select-form js-palette-select-form">
+                <select name="palette-choice" class="palette-choice js-palette-choice">
                   <option value="monochrome">Monochrome</option>
                   <option value="monochrome-dark">Monochrome Dark</option>
                   <option value="monochrome-light">Monochrome Light</option>
@@ -167,7 +156,6 @@
         </section>
 
     </main>
-    <script src="webcam.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
