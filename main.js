@@ -15,7 +15,6 @@ function renderHome(){
 function handleImageLinkButton(){
     $('#js-find-colors').on('click',function(event){
         event.preventDefault();
-        console.log("handleImageLinkButton fired");
         let imageLink = $('#js-image-link-entry').val();
         extractColors(extractionUrl,imageLink,extractionAuthorization);  
     });
@@ -23,9 +22,8 @@ function handleImageLinkButton(){
 
   
 function extractColors(extractionUrl,imageLink,extractionAuthorization) {
-    console.log(imageLink);
     const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=0
-    extract_object_colors=1&overall_count=3`;
+    extract_object_colors=1&overall_count=5`;
   
    const extractionHeaders = {
         headers: new Headers({
@@ -41,14 +39,14 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
             }
             throw new Error(response.statusText);
         })
-        .then(responseJson => displayResults(responseJson))
-        .then(responseJson => console.log(responseJson))
+        .then(responseJson => {
+            displayResults(responseJson);
+            storeResults(responseJson);
+        })
         .catch(err => {
             $('.js-error-message').show();
             $('.js-error-message').text(`Something went wrong: ${err.message}`);
-    });
-    displayResults(responseJson);
-    // storeResults(responseJson);
+    });    
 }
 
 function displayResults(responseJson) {
@@ -56,21 +54,23 @@ function displayResults(responseJson) {
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
         $('.js-extraction-list').append(`
         <li>${responseJson.result.colors.foreground_colors[i].closest_palette_color}
-            <div style="background-color:${responseJson.result.colors.foreground_colors[i].
-                html_code}">
-            </div>
-        </li>
-        `)
+        </li>`)
+        $('js-extracted-colors-display').append(`
+        <div style="background-color: ${responseJson.result.colors.foreground_colors[i].html_code};" 
+        class = "extracted-color-tile js-extracted-color-tile">
+        </div>`)
     };
 }
 
-// function storeResults(){
-//     extractionArray = [];
-//     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
-//         extractionArray.push(responseJson.result.colors.foreground_colors[i].
-//             html_code)
-//     }
-// }
+function storeResults(responseJson){
+    let extractionArray = [];
+    for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
+        extractionArray.push(`${responseJson.result.colors.foreground_colors[i].
+            html_code}`)
+    }
+    // return extractionArray;
+    console.log(extractionArray);
+}
 
 // function getFinalPalette(paletteChoice,paletteChoiceUrl){
 
