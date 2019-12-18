@@ -22,8 +22,11 @@ function handleImageLinkButton(){
 
   
 function extractColors(extractionUrl,imageLink,extractionAuthorization) {
-    const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=0
-    extract_object_colors=1&overall_count=5`;
+    $('.js-extraction-list').empty();
+    $('.js-extracted-colors-display').empty();
+
+    const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=1
+    &overall_count=10`;
   
    const extractionHeaders = {
         headers: new Headers({
@@ -41,7 +44,7 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
         })
         .then(responseJson => {
             displayResults(responseJson);
-            storeResults(responseJson);
+            createPalette(responseJson);
         })
         .catch(err => {
             $('.js-error-message').show();
@@ -50,39 +53,42 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
 }
 
 function displayResults(responseJson) {
+    console.log(responseJson);
     $('.js-extraction-list').empty();
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
         $('.js-extraction-list').append(`
         <li>${responseJson.result.colors.foreground_colors[i].closest_palette_color}
-        </li>`)
-        $('js-extracted-colors-display').append(`
+        </li>`);
+        $('.js-extracted-colors-display').append(`
         <div style="background-color: ${responseJson.result.colors.foreground_colors[i].html_code};" 
         class = "extracted-color-tile js-extracted-color-tile">
         </div>`)
     };
+    handleColorsApprovedButton();
 }
 
-function storeResults(responseJson){
-    let extractionArray = [];
-    for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
-        extractionArray.push(`${responseJson.result.colors.foreground_colors[i].
-            html_code}`)
-    }
-    // return extractionArray;
-    console.log(extractionArray);
+
+function createPalette(responseJson){
+    (new KolorWheel(`${responseJson.result.colors.foreground_colors[0].html_code}`)).abs(0,-1,-1,$(".js-color-palette-1")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+
+    (new KolorWheel(`${responseJson.result.colors.foreground_colors[1].html_code}`)).abs(0,-1,-1,$(".js-color-palette-2")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+
+    (new KolorWheel(`${responseJson.result.colors.foreground_colors[2].html_code}`)).abs(0,-1,-1,$(".js-color-palette-3")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
 }
 
-// function getFinalPalette(paletteChoice,paletteChoiceUrl){
-
-// }
-
-// function handlePaletteSubmit() {
-//     $('form').submit(event => {
-//       event.preventDefault();
-//       const paletteChoice = $('.js-palette-choice').val();
-//       getFinalPalette(paletteChoice);
-//     });
-//   }
+function handleColorsApprovedButton(){
+    $('.js-colors-approved').on('click',function(event){
+        $('.js-instructions-screen').hide();
+        $('.js-photo-screen').hide();
+        $('.js-palette-display-screen').show();  
+    });
+}
 
 function handleInstructionsButton(){
     $('.js-instructions-button').on('click',function(event){
@@ -92,14 +98,6 @@ function handleInstructionsButton(){
     });
 }
 
-function handleColorsApprovedButton(){
-    $('.js-colors-approved').on('click',function(event){
-        $('.js-photo-screen').hide();
-        $('.js-palette-select-screen ').show();
-    });
-    handleInstructionsButton();
-    handlePhotoButton();
-}
 
 function handlePhotoButton(){
     $('.js-photo-button').on('click',function(event){
@@ -117,17 +115,13 @@ function handleGetStarted(){
         $('.js-photo-preview-heading').hide();
         $('.js-error-message').hide();
         $('.js-extracted-colors-heading').hide();
-        handleImageLinkButton();
     });
-    // remove handleColorsApprovedButton when api is fixed
-    // handleColorsApprovedButton();
-    // handleInstructionsButton();
+    handleInstructionsButton();
 }
-
-// put handleColorsApprovedButton in function displayResults when api is fixed
 
 $(function() {
     console.log("App loaded");
     renderHome();
     handleImageLinkButton();
+    handleColorsApprovedButton();
 });

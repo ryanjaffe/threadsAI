@@ -13,13 +13,13 @@
 </head>
 <body>
     <header>
-        <h1>ThreadsAI</h1>
+        <h1>Palette AI</h1>
     </header>
     <main>
         <section class="instructions-screen js-instructions-screen">
 
             <h2 class="homeSubheading js-homeSubheading">
-                Coordinating outfits just got easier!
+                Turn any image into a color palette!
             </h2>
 
             <p>
@@ -74,9 +74,8 @@
             <h2 class="extracted-colors-heading js-extracted-colors-heading">
                 Extracted Colors:
             </h2>
-
-            <ul class="extraction-list js-extraction-list"></ul> -->
-    
+            <ul class="js-extraction-list"></ul>
+            <div class="js-extracted-colors-display"></div>
             <button class="colors-approved js-colors-approved">
                 Looks Great
             </button>
@@ -85,65 +84,45 @@
             </button>
 
         </section>
-
-        <section class="palette-select-screen js-palette-select-screen">
-            <h2 class="palette-select-subheading">
-                What color scheme would you like?
-            </h2>
-            <form class="palette-select-form js-palette-select-form">
-                <select name="palette-choice" class="palette-choice js-palette-choice">
-                  <option value="monochrome">Monochrome</option>
-                  <option value="monochrome-dark">Monochrome Dark</option>
-                  <option value="monochrome-light">Monochrome Light</option>
-                  <option value="analogic">Analogic</option>
-                  <option value="compliment">Complimentary</option>
-                  <option value="analogic-compliment">Analogic Complimentary</option>
-                  <option value="triad">Triadic</option>
-                  <option value="quad">Quadratic</option>
-                </select>
-                <input type="submit">
-            </form>
-            <p>
-                Monochrome: A color scheme based on one color with white or black 
-                added to create an elegant look, even when a bold color is used.
-            </p>
-            <p>
-                Analogic: This scheme uses colors adjacent on the color wheel to 
-                create a clean look that is either warm or cold.
-            </p>
-            <p>
-                Complimentary: This scheme uses color opposites on the color wheel 
-                to create a bold style.
-            </p>
-            <p>
-                Analogic-Complimentary: This scheme offers a combination of warm 
-                and cold colors creating a bold style with a sense of harmony.
-            </p>
-            <p>
-                Triad: This scheme is based on three colors equal values apart
-                on the color wheel. No color is dominant in this vibrant look. A 
-                bold style for bold people, this is the most colorful palette.
-            </p>
-            <p>
-                Quadratic: This scheme is based on four colors in complimentary 
-                pairs, two warm and two cold. This results in a very vibrant but 
-                coordinated look.
-            </p>
-            <button class="photo-button js-photo-button">
-                Take Another Photo
-            </button>
-            <button class="instructions-button js-instructions-button">
-                Instructions
-            </button>
-        </section>
         <section class="palette-display-screen js-palette-display-screen">
             <h2>Here are your recommendations</h2>
-            <div class="color1 js-color1"></div>
-            <div class="color2 js-color2"></div>
-            <div class="color3 js-color3"></div>
-            <div class="color4 js-color4"></div>
-            <div class="color5 js-color5"></div>
-            <div class="color6 js-color6"></div>
+
+            <div class="palette-container">
+                <p>Palette 1</p>
+                <div class="palette-color-tile js-color1 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color2 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color3 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color4 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color5 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color6 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color7 js-color-palette-1"></div>
+                <div class="palette-color-tile js-color8 js-color-palette-1"></div>    
+            </div>
+
+            <div class="palette-container">
+                <p>Palette 2</p>
+                <div class="palette-color-tile js-color1 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color2 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color3 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color4 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color5 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color6 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color7 js-color-palette-2"></div>
+                <div class="palette-color-tile js-color8 js-color-palette-2"></div>    
+            </div>
+
+            <div class="palette-container">
+                <p>Palette 3</p>
+                <div class="palette-color-tile js-color1 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color2 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color3 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color4 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color5 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color6 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color7 js-color-palette-3"></div>
+                <div class="palette-color-tile js-color8 js-color-palette-3"></div>    
+            </div>
+
             <button class="palette-button js-palette-button">
                 Try Another Palette
             </button>
@@ -161,7 +140,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-
+    <script src="kolorwheel.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
 </body>
 </html>
