@@ -23,10 +23,13 @@
             </h2>
 
             <p>
-                ThreadsAI is an app designed to generate 
-                palettes of colors that you can use to 
+                ThreadsAI is an app designed to assist the 
+                visually impaired by recognizing colors, as 
+                well as aid the sighted by generating 
+                palettes of color that you can use to 
                 coordinate your outfits so you look amazing
-                every time.
+                every time. Use your imagination and use 
+                ThreadsAI for any purpose you want!
             </p>
             <p>
                 Just follow three easy steps:
@@ -34,16 +37,21 @@
 
             <ol>
                 <li>
-                    Take a photo of the clothing that you 
+                    Submit the address of the image that you 
                     want a palette based on.
                 </li>
                 <li>
-                    Preview and approve the photo that the 
-                    colors are extracted from.
+                    Preview the colors that are extracted from
+                    the image. The closest color names are 
+                    provided for people using assistive technologies, 
+                    and samples are provided for the sighted.
                 </li>
                 <li>
-                    Choose a color scheme that the app will 
-                    use to generate colors.
+                    A set of color palettes are generated for each 
+                    of the dominant colors in the image foreground. 
+                    Multiple palette styles are provided using this 
+                    format. All colors should play well together and 
+                    are recommended for creating your style!
                 </li>
             </ol>
 
@@ -64,7 +72,7 @@
             </h2>
 
             <form id="image-link-form js-image-link-form">
-                    <label for="image-link-entry">Add an item</label>
+                    <label for="image-link-entry">Enter an image address:</label>
                     <input type="text" name="image-link-entry" id="js-image-link-entry" 
                     placeholder="myimagefrominstagram.com">
                     <button id="js-find-colors">Find Colors</button>
@@ -77,7 +85,7 @@
             <ul class="js-extraction-list"></ul>
             <div class="js-extracted-colors-display"></div>
             <button class="colors-approved js-colors-approved">
-                Looks Great
+                Find Palettes
             </button>
             <button class="instructions-button js-instructions-button">
                 Instructions
@@ -86,48 +94,147 @@
         </section>
         <section class="palette-display-screen js-palette-display-screen">
             <h2>Here are your recommendations</h2>
+            <div class="container">
 
-            <div class="palette-container">
-                <p>Palette 1</p>
-                <div class="palette-color-tile js-color1 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color2 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color3 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color4 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color5 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color6 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color7 js-color-palette-1"></div>
-                <div class="palette-color-tile js-color8 js-color-palette-1"></div>    
+                <div class="container palette-group">
+                    <h3>Absolute Gradient</h3>
+                    <div class="palette-container">
+                        <p>Palette 1</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-1"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-1"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-1"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-1"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-1"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-1"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 2</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-2"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-2"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-2"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-2"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-2"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-2"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 3</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-3"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-3"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-3"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-3"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-3"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-3"></div>
+                    </div>
+                </div>
+
+                <div class="container palette-group">
+                    <h3>White Gradient</h3>
+                    <div class="palette-container">
+                        <p>Palette 1</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-4"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-4"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-4"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-4"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-4"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-4"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 2</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-5"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-5"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-5"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-5"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-5"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-5"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 3</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-6"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-6"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-6"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-6"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-6"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-6"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="palette-container">
-                <p>Palette 2</p>
-                <div class="palette-color-tile js-color1 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color2 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color3 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color4 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color5 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color6 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color7 js-color-palette-2"></div>
-                <div class="palette-color-tile js-color8 js-color-palette-2"></div>    
+            <div class="container">
+
+                <div class="container palette-group">
+                    <h3>Black Gradient</h3>
+                    <div class="palette-container">
+                        <p>Palette 1</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-7"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-7"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-7"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-7"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-7"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-7"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 2</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-8"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-8"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-8"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-8"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-8"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-8"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 3</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-9"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-9"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-9"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-9"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-9"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-9"></div>
+                    </div>
+                </div>
+
+                <div class="container palette-group">
+                    <h3>Relative Gradient</h3>
+                    <div class="palette-container">
+                        <p>Palette 1</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-10"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-10"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-10"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-10"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-10"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-10"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 2</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-11"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-11"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-11"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-11"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-11"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-11"></div>
+                    </div>
+        
+                    <div class="palette-container">
+                        <p>Palette 3</p>
+                        <div class="palette-color-tile js-color1 js-color-palette-12"></div>
+                        <div class="palette-color-tile js-color2 js-color-palette-12"></div>
+                        <div class="palette-color-tile js-color3 js-color-palette-12"></div>
+                        <div class="palette-color-tile js-color4 js-color-palette-12"></div>
+                        <div class="palette-color-tile js-color5 js-color-palette-12"></div>
+                        <div class="palette-color-tile js-color6 js-color-palette-12"></div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="palette-container">
-                <p>Palette 3</p>
-                <div class="palette-color-tile js-color1 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color2 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color3 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color4 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color5 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color6 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color7 js-color-palette-3"></div>
-                <div class="palette-color-tile js-color8 js-color-palette-3"></div>    
-            </div>
-
-            <button class="palette-button js-palette-button">
-                Try Another Palette
-            </button>
             <button class="photo-button js-photo-button">
-                Take Another Photo
+                Use Another Photo
             </button>
             <button class="instructions-button js-instructions-button">
                 Instructions

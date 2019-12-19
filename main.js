@@ -22,11 +22,8 @@ function handleImageLinkButton(){
 
   
 function extractColors(extractionUrl,imageLink,extractionAuthorization) {
-    $('.js-extraction-list').empty();
-    $('.js-extracted-colors-display').empty();
-
-    const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=1
-    &overall_count=10`;
+    const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=0
+    &overall_count=3`;
   
    const extractionHeaders = {
         headers: new Headers({
@@ -53,18 +50,20 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
 }
 
 function displayResults(responseJson) {
-    console.log(responseJson);
     $('.js-extraction-list').empty();
+    $('.js-extracted-colors-display').empty();
+    $('#js-image-link-entry').empty();
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
         $('.js-extraction-list').append(`
-        <li>${responseJson.result.colors.foreground_colors[i].closest_palette_color}
+        <li class = "extracted-color-text js-extracted-color-text">
+        ${responseJson.result.colors.foreground_colors[i].closest_palette_color}
         </li>`);
         $('.js-extracted-colors-display').append(`
         <div style="background-color: ${responseJson.result.colors.foreground_colors[i].html_code};" 
         class = "extracted-color-tile js-extracted-color-tile">
         </div>`)
     };
-    handleColorsApprovedButton();
+    handleExtractColorsButton();
 }
 
 
@@ -72,17 +71,52 @@ function createPalette(responseJson){
     (new KolorWheel(`${responseJson.result.colors.foreground_colors[0].html_code}`)).abs(0,-1,-1,$(".js-color-palette-1")).each(function(elm){
         elm.css("background",this.getHex());
     });
-
     (new KolorWheel(`${responseJson.result.colors.foreground_colors[1].html_code}`)).abs(0,-1,-1,$(".js-color-palette-2")).each(function(elm){
         elm.css("background",this.getHex());
     });
-
     (new KolorWheel(`${responseJson.result.colors.foreground_colors[2].html_code}`)).abs(0,-1,-1,$(".js-color-palette-3")).each(function(elm){
         elm.css("background",this.getHex());
     });
+
+    var base = new KolorWheel("#ffffff");
+    var target = base.abs(`${responseJson.result.colors.foreground_colors[0].html_code}`,$(".js-color-palette-4")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+    var base = new KolorWheel("#ffffff");
+    var target = base.abs(`${responseJson.result.colors.foreground_colors[1].html_code}`,$(".js-color-palette-5")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+    var base = new KolorWheel("#ffffff");
+    var target = base.abs(`${responseJson.result.colors.foreground_colors[2].html_code}`,$(".js-color-palette-6")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+
+    var base = new KolorWheel("#000000");
+    var target = base.abs(`${responseJson.result.colors.foreground_colors[0].html_code}`,$(".js-color-palette-7")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+    var base = new KolorWheel("#000000");
+    var target = base.abs(`${responseJson.result.colors.foreground_colors[1].html_code}`,$(".js-color-palette-8")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+    var base = new KolorWheel("#000000");
+    var target = base.abs(`${responseJson.result.colors.foreground_colors[2].html_code}`,$(".js-color-palette-9")).each(function(elm){
+        elm.css("background",this.getHex());
+    });
+
+    (new KolorWheel(`${responseJson.result.colors.foreground_colors[0].html_code}`)).rel(0,0,80,$(".js-color-palette-10")).each(function(elm) {
+        elm.css("background",this.getHex());
+    });
+    (new KolorWheel(`${responseJson.result.colors.foreground_colors[1].html_code}`)).rel(0,0,80,$(".js-color-palette-11")).each(function(elm) {
+        elm.css("background",this.getHex());
+    });
+    (new KolorWheel(`${responseJson.result.colors.foreground_colors[2].html_code}`)).rel(0,0,80,$(".js-color-palette-12")).each(function(elm) {
+        elm.css("background",this.getHex());
+    });
+
 }
 
-function handleColorsApprovedButton(){
+function handleExtractColorsButton(){
     $('.js-colors-approved').on('click',function(event){
         $('.js-instructions-screen').hide();
         $('.js-photo-screen').hide();
@@ -94,7 +128,7 @@ function handleInstructionsButton(){
     $('.js-instructions-button').on('click',function(event){
         $('.js-instructions-screen').show();
         $('.js-photo-screen').hide();
-        $('.js-palette-select-screen').hide();   
+        $('.js-palette-display-screen').hide();   
     });
 }
 
@@ -102,7 +136,7 @@ function handleInstructionsButton(){
 function handlePhotoButton(){
     $('.js-photo-button').on('click',function(event){
         $('.js-instructions-screen').hide();
-        $('.js-palette-select-screen').hide();   
+        $('.js-palette-display-screen').hide();   
         $('.js-photo-screen').show();
     });
 }
@@ -116,12 +150,11 @@ function handleGetStarted(){
         $('.js-error-message').hide();
         $('.js-extracted-colors-heading').hide();
     });
-    handleInstructionsButton();
 }
 
 $(function() {
-    console.log("App loaded");
     renderHome();
     handleImageLinkButton();
-    handleColorsApprovedButton();
+    handleInstructionsButton();
+    handlePhotoButton();
 });
