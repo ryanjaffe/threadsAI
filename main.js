@@ -3,24 +3,6 @@
 const extractionUrl = 'https://api.imagga.com/v2/colors';
 const extractionAuthorization = 'Basic YWNjXzNkNzBmYTkxNjFlMzAwOTo5OWRlNTExN2E0MmJkMzY5NDMzM2UzZjYzMGZhYzQ0Mw==';
 
-function renderHome(){
-    $('.js-photo-screen').hide();
-    $('.js-extraction-preview-screen').hide();
-    $('.js-palette-select-screen').hide();
-    $('.js-palette-display-screen').hide();
-
-    handleGetStarted();
-}  
-
-function handleImageLinkButton(){
-    $('#js-find-colors').on('click',function(event){
-        event.preventDefault();
-        let imageLink = $('#js-image-link-entry').val();
-        extractColors(extractionUrl,imageLink,extractionAuthorization);  
-    });
-}
-
-  
 function extractColors(extractionUrl,imageLink,extractionAuthorization) {
     const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=0
     &overall_count=3`;
@@ -50,8 +32,6 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
 }
 
 function displayResults(responseJson) {
-    $('.js-extraction-list').empty();
-    $('.js-extracted-colors-display').empty();
     $('#js-image-link-entry').empty();
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
         $('.js-extraction-list').append(`
@@ -149,6 +129,23 @@ function handleGetStarted(){
         $('.js-photo-preview-heading').hide();
         $('.js-error-message').hide();
         $('.js-extracted-colors-heading').hide();
+    });
+}
+
+function renderHome(){
+    $('.js-photo-screen').hide();
+    $('.js-extraction-preview-screen').hide();
+    $('.js-palette-select-screen').hide();
+    $('.js-palette-display-screen').hide();
+    handleGetStarted();
+}  
+
+function handleImageLinkButton(){
+    $('#js-find-colors').on('click',function(event){
+        event.preventDefault();
+        let imageLink = $('#js-image-link-entry').val();
+        extractColors(extractionUrl,imageLink,extractionAuthorization); 
+        $('#js-image-link-entry').val(''); 
     });
 }
 
