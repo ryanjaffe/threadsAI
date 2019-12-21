@@ -40,10 +40,11 @@ function displayResults(responseJson) {
         </li>`);
         $('.js-extracted-colors-display').append(`
         <div style="background-color: ${responseJson.result.colors.foreground_colors[i].html_code};" 
-        class = "extracted-color-tile js-extracted-color-tile">
+        class = "extracted-color-tile js-extracted-color-tile js-click-for-extraction-rgb">
         </div>`)
     };
     handleExtractColorsButton();
+    provideExtractionColor();
 }
 
 
@@ -149,10 +150,24 @@ function handleImageLinkButton(){
     $('.js-extracted-colors-section').show();
 }
 
+function provideExtractionColor(){
+    $( ".js-click-for-extraction-rgb" ).click(function() {
+        let rgbCode = $(this).css("background-color");
+        $(".provide-extraction-rgb").html(`${rgbCode}`);
+    })
+}
+
+function providePaletteColor(){
+    $( ".js-click-for-palette-rgb" ).click(function() {
+        let rgbCode = $(this).css("background-color");
+        $(".provide-palette-rgb").html(`${rgbCode}`);
+    })
+}
 
 $(function() {
     renderHome();
     handleImageLinkButton();
     handleInstructionsButton();
     handlePhotoButton();
+    providePaletteColor();
 });

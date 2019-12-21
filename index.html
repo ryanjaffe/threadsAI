@@ -11,6 +11,7 @@
     <title>ThreadsAI</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="ThreadsAI-Favicon.ico">
 </head>
 <body>
     <header>
@@ -54,6 +55,10 @@
                     format. All colors should play well together and 
                     are recommended for creating your style!
                 </li>
+                <li>
+                    Click on any color to receive the rgb code for the 
+                    color for any graphic design project!
+                </li>
             </ol>
 
             <p>
@@ -81,11 +86,12 @@
                         Find Colors
                     </button>
                   </form>
-              
+            <p class = "provide-extraction-rgb"></p>
+
             <section class="extracted-colors-section js-extracted-colors-section">
                 <div class="extraction-container">
-                    <ul class="js-extraction-list"></ul>
-                    <div class="js-extracted-colors-display"></div>
+                    <ul class="extraction-list js-extraction-list"></ul>
+                    <div class="extracted-colors-display js-extracted-colors-display"></div>
                 </div>
                 <button class="colors-approved js-colors-approved stylized-button">
                     Find Palettes
@@ -98,65 +104,137 @@
         </section>
         <section class="palette-display-screen js-palette-display-screen">
             <h2>Here are your recommendations</h2>
+            <p class = "provide-palette-rgb"></p>
             <div class="container">
-
                 <div class="container palette-group">
-                    <h3>Absolute Gradient</h3>
+                    <h3>Absolute<br>Gradient</h3>
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-1"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-1"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-1"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-1"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-1"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-1"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-1
+                        js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-1
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-1
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-1
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-1
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-1
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-2"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-2"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-2"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-2"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-2"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-2"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-2
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-2
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-2
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-2
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-2
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-2
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-3"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-3"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-3"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-3"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-3"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-3"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-3
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-3
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-3
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-3
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-3
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-3
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
                 </div>
 
                 <div class="container palette-group">
-                    <h3>White Gradient</h3>
+                    <h3>White<br>Gradient</h3>
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-4"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-4"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-4"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-4"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-4"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-4"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-4
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-4
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-4
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-4
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-4
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-4
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-5"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-5"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-5"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-5"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-5"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-5"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-5
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-5
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-5
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-5
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-5
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-5
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-6"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-6"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-6"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-6"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-6"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-6"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-6
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-6
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-6
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-6
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-6
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-6
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,62 +242,134 @@
             <div class="container">
 
                 <div class="container palette-group">
-                    <h3>Black Gradient</h3>
+                    <h3>Black<br>Gradient</h3>
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-7"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-7"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-7"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-7"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-7"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-7"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-7
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-7
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-7
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-7
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-7
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-7
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-8"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-8"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-8"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-8"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-8"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-8"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-8
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-8
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-8
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-8
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-8
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-8
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-9"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-9"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-9"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-9"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-9"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-9"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-9
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-9
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-9
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-9
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-9
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-9
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
                 </div>
 
                 <div class="container palette-group">
-                    <h3>Relative Gradient</h3>
+                    <h3>Relative<br>Gradient</h3>
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-10"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-10"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-10"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-10"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-10"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-10"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-10
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-10
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-10
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-10
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-10
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-10
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-11"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-11"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-11"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-11"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-11"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-11"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-11
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-11
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-11
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-11
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-11
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-11
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
         
                     <div class="palette-container">
-                        <div class="palette-color-tile js-color1 js-color-palette-12"></div>
-                        <div class="palette-color-tile js-color2 js-color-palette-12"></div>
-                        <div class="palette-color-tile js-color3 js-color-palette-12"></div>
-                        <div class="palette-color-tile js-color4 js-color-palette-12"></div>
-                        <div class="palette-color-tile js-color5 js-color-palette-12"></div>
-                        <div class="palette-color-tile js-color6 js-color-palette-12"></div>
+                        <div class="palette-color-tile js-color1 js-color-palette-12
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color2 js-color-palette-12
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color3 js-color-palette-12
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color4 js-color-palette-12
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color5 js-color-palette-12
+                            js-click-for-palette-rgb">
+                        </div>
+                        <div class="palette-color-tile js-color6 js-color-palette-12
+                            js-click-for-palette-rgb">
+                        </div>
                     </div>
                 </div>
 

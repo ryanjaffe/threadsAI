@@ -48,7 +48,7 @@
     }
 
     li{
-        font-size: 18px;
+        font-size: 26px;
         font-family: 'Roboto', sans-serif;
         line-height: 150%;
     }
@@ -63,7 +63,7 @@
         font-size: 24px;
         font-family: 'Roboto', sans-serif;
         border-radius: 15px;
-        width: 90%;
+        width: 95%;
         height: 50px;
         display: block;
         margin-left: auto;
@@ -72,7 +72,11 @@
         margin-bottom: 0px;
     }
 
-    .stylized-button:hover{
+    .palette-display-screen .photo-button{
+        height: 200px; 
+    }
+
+    .stylized-button:active{
         background: #63D2D4;
         transition-property: background;
         transition-duration: 0.6s;
@@ -137,10 +141,16 @@
         transition-timing-function: linear;
     }
 
+    .provide-extraction-rgb{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: #E50B2C;
+    }
 
     .palette-color-tile{
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         border: 2px solid black;
         margin-left: auto;
         margin-right: auto;
@@ -149,8 +159,8 @@
     }
 
     .palette-color-tile:active{
-        width: 480px;
-        height: 480px;
+        width: 225px;
+        height: 225px;
         transition-duration: 0.35s;
         transition-timing-function: linear;
     }
@@ -174,6 +184,13 @@
         margin-right: auto;
         margin-top: 10px;
         margin-bottom: 0px;
+    }
+
+    .provide-palette-rgb{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: #E50B2C;
     }
 }
 
@@ -223,7 +240,7 @@
     }
 
     li{
-        font-size: 20px;
+        font-size: 28px;
         font-family: 'Roboto', sans-serif;
         line-height: 150%;
     }
@@ -278,17 +295,17 @@
         flex-direction: row;
     }
 
-    .js-extraction-list{
+    .extraction-list{
         width: 50%;
         text-align: center;
         list-style: none;
     }
-    .js-extraction-list li{
+    .extraction-list li{
         margin-top: 16.5%;
         margin-bottom: 16.5%;
     }
 
-    .js-extracted-colors-display{
+    .extracted-colors-display{
         width:50%;
         margin-left: auto;
         margin-right: auto;
@@ -303,10 +320,17 @@
     }
 
     .extracted-color-tile:active, .extracted-color-tile:hover{
-        width: 42%;
-        height: 42%;
+        width: 38%;
+        height: 38%;
         transition-duration: 0.35s;
         transition-timing-function: linear;
+    }
+
+    .provide-extraction-rgb{
+        text-align: center;
+        font-size: 36px;
+        font-family: 'Roboto', sans-serif;
+        color: #E50B2C;
     }
 
     .palette-color-tile{
@@ -348,6 +372,13 @@
         margin-right: auto;
         margin-top: 10px;
         margin-bottom: 0px;
+    }
+
+    .provide-palette-rgb{
+        text-align: center;
+        font-size: 36px;
+        font-family: 'Roboto', sans-serif;
+        color: #E50B2C;
     }
 }
 
@@ -420,6 +451,8 @@
     .container{
         display: flex;
         flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .palette-container{
@@ -475,33 +508,48 @@
         font-family: 'Roboto', sans-serif;
     }
 
+    .provide-extraction-rgb{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: #E50B2C;
+    }
+
     .extraction-container{
         display: flex;
         flex-direction: row;
     }
 
-    .js-extraction-list{
+    .extraction-list{
         width: 50%;
-        text-align: center;
+        text-align: right;
+        margin-right: 15%;
         list-style: none;
     }
-    .js-extraction-list li{
+    .extraction-list li{
         margin-top: 16.5%;
         margin-bottom: 16.5%;
     }
 
-    .js-extracted-colors-display{
+    .extracted-colors-display{
         width:50%;
         margin-left: auto;
         margin-right: auto;
     }
 
     .extracted-color-tile{
-        width: 30%;
-        height: 30%;
+        width: 28%;
+        height: 28%;
         border: 2px solid black;
         margin: 3%;
         border-radius: 50%;
+    }
+
+    .extracted-color-tile:hover{
+        width: 38%;
+        height: 38%;
+        transition-duration: 0.35s;
+        transition-timing-function: linear;
     }
 
     .extracted-color-text{
@@ -522,6 +570,13 @@
         margin-right: auto;
         margin-top: 10px;
         margin-bottom: 0px;
+    }
+
+    .provide-palette-rgb{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: #E50B2C;
     }
 }
 
