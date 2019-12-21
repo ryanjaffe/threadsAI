@@ -128,7 +128,6 @@ function handleGetStarted(){
         $('.js-photo-screen').show();
         $('.js-photo-preview-heading').hide();
         $('.js-error-message').hide();
-        $('.js-extracted-colors-heading').hide();
     });
 }
 
@@ -147,7 +146,9 @@ function handleImageLinkButton(){
         extractColors(extractionUrl,imageLink,extractionAuthorization); 
         $('#js-image-link-entry').val(''); 
     });
+    $('.js-extracted-colors-section').show();
 }
+
 
 $(function() {
     renderHome();
