@@ -394,15 +394,22 @@
 }
 
 @media screen and (min-width:992px){
+    html{
+        height: 100%;
+    }
+
     body {
         margin: 0px;
         border-left: 80px solid #63D2D4;
         border-right: 80px solid #63D2D4;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        padding:0px;
+        background-color: #F4F5ED;
+        min-height: 100%;
+    }
+
+    .instructions-screen{
         padding-left: 50px;
         padding-right: 50px;
-        background-color: #F4F5ED;
     }
 
     h1{

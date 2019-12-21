@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <title>ThreadsAI</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black%7CRoboto&display=swap" rel="stylesheet">
     <link rel="icon" type="image/ico" href="ThreadsAI-Favicon.ico">
 </head>
 <body>
@@ -78,10 +78,10 @@
                 Submit a link to the image!
             </h2>
 
-            <form id="image-link-form js-image-link-form">
+            <form class="image-link-form js-image-link-form">
                     <label for="image-link-entry">Enter an image address:</label>
-                    <input type="text" name="image-link-entry" id="js-image-link-entry" 
-                    placeholder="myimagefrominstagram.com">
+                    <input type="text" name="image-link-entry" id="image-link-entry" 
+                    class="js-image-link-entry" placeholder="myimagefrominstagram.com">
                     <button id="js-find-colors" class="stylized-button">
                         Find Colors
                     </button>
@@ -89,6 +89,7 @@
             <p class = "provide-extraction-rgb"></p>
 
             <section class="extracted-colors-section js-extracted-colors-section">
+                <h2>These colors were extracted</h2>
                 <div class="extraction-container">
                     <ul class="extraction-list js-extraction-list"></ul>
                     <div class="extracted-colors-display js-extracted-colors-display"></div>
@@ -389,7 +390,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-    <script src="kolorwheel.js" type="text/javascript"></script>
-    <script src="main.js" type="text/javascript"></script>
+    <script src="kolorwheel.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

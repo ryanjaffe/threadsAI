@@ -32,7 +32,7 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
 }
 
 function displayResults(responseJson) {
-    $('#js-image-link-entry').empty();
+    $('.js-image-link-entry').empty();
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
         $('.js-extraction-list').append(`
         <li class = "extracted-color-text js-extracted-color-text">
@@ -137,17 +137,18 @@ function renderHome(){
     $('.js-extraction-preview-screen').hide();
     $('.js-palette-select-screen').hide();
     $('.js-palette-display-screen').hide();
+    $('.js-extracted-colors-section').hide();
     handleGetStarted();
 }  
 
 function handleImageLinkButton(){
     $('#js-find-colors').on('click',function(event){
         event.preventDefault();
-        let imageLink = $('#js-image-link-entry').val();
+        let imageLink = $('.js-image-link-entry').val();
         extractColors(extractionUrl,imageLink,extractionAuthorization); 
-        $('#js-image-link-entry').val(''); 
+        $('.js-image-link-entry').val(''); 
+        $('.js-extracted-colors-section').show();
     });
-    $('.js-extracted-colors-section').show();
 }
 
 function provideExtractionColor(){
