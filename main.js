@@ -1,6 +1,6 @@
-'use strict'
+"use strict"
 
-const extractionUrl = 'https://api.imagga.com/v2/colors';
+const extractionUrl = "https://api.imagga.com/v2/colors";
 const extractionAuthorization = 'Basic YWNjXzNkNzBmYTkxNjFlMzAwOTo5OWRlNTExN2E0MmJkMzY5NDMzM2UzZjYzMGZhYzQ0Mw==';
 
     // Get colors from Imagga API and pass values into 
@@ -11,7 +11,7 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
   
    const extractionHeaders = {
         headers: new Headers({
-        'authorization' : extractionAuthorization,
+        "authorization" : extractionAuthorization,
         })
     };
   
@@ -28,8 +28,8 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
             createPalette(responseJson);
         })
         .catch(err => {
-            $('.js-error-message').show();
-            $('.js-error-message').text(`Something went wrong: ${err.message}`);
+            $(".js-error-message").show();
+            $(".js-error-message").text(`Something went wrong: ${err.message}`);
     });    
 }
 
@@ -37,13 +37,13 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
     // and divs that display the color for each extracted 
     // color
 function displayResults(responseJson) {
-    $('.js-image-link-entry').empty();
+    $(".js-image-link-entry").empty();
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
-        $('.js-extraction-list').append(`
+        $(".js-extraction-list").append(`
         <li class = "extracted-color-text js-extracted-color-text">
         ${responseJson.result.colors.foreground_colors[i].closest_palette_color}
         </li>`);
-        $('.js-extracted-colors-display').append(`
+        $(".js-extracted-colors-display").append(`
         <div style="background-color: ${responseJson.result.colors.foreground_colors[i].html_code};" 
         class = "extracted-color-tile js-extracted-color-tile js-click-for-extraction-rgb">
         </div>`)
@@ -104,60 +104,60 @@ function createPalette(responseJson){
 
     // Switch to palette view
 function handleExtractColorsButton(){
-    $('.js-colors-approved').on('click',function(event){
-        $('.js-instructions-screen').hide();
-        $('.js-photo-screen').hide();
-        $('.js-palette-display-screen').show();  
+    $(".js-colors-approved").on("click",function(event){
+        $(".js-instructions-screen").hide();
+        $(".js-photo-screen").hide();
+        $(".js-palette-display-screen").show();  
     });
 }
 
     // Switch to Instructions view
 function handleInstructionsButton(){
-    $('.js-instructions-button').on('click',function(event){
-        $('.js-instructions-screen').show();
-        $('.js-photo-screen').hide();
-        $('.js-palette-display-screen').hide();   
+    $(".js-instructions-button").on('click',function(event){
+        $(".js-instructions-screen").show();
+        $(".js-photo-screen").hide();
+        $(".js-palette-display-screen").hide();   
     });
 }
 
     // Switch back to add image screen from other views
 function handlePhotoButton(){
-    $('.js-photo-button').on('click',function(event){
-        $('.js-instructions-screen').hide();
-        $('.js-palette-display-screen').hide();   
-        $('.js-photo-screen').show();
+    $(".js-photo-button").on("click",function(event){
+        $(".js-instructions-screen").hide();
+        $(".js-palette-display-screen").hide();   
+        $(".js-photo-screen").show();
     });
 }
 
     // Go to image screen
 function handleGetStarted(){
-    $('.js-get-started-button').on('click',function(event){
-        $('.js-instructions-screen').hide();
-        $('.js-preview-heading').hide();
-        $('.js-photo-screen').show();
-        $('.js-photo-preview-heading').hide();
-        $('.js-error-message').hide();
+    $(".js-get-started-button").on('click',function(event){
+        $(".js-instructions-screen").hide();
+        $(".js-preview-heading").hide();
+        $(".js-photo-screen").show();
+        $(".js-photo-preview-heading").hide();
+        $(".js-error-message").hide();
     });
 }
 
     // Render the page
 function renderHome(){
-    $('.js-photo-screen').hide();
-    $('.js-extraction-preview-screen').hide();
-    $('.js-palette-select-screen').hide();
-    $('.js-palette-display-screen').hide();
-    $('.js-extracted-colors-section').hide();
+    $(".js-photo-screen").hide();
+    $(".js-extraction-preview-screen").hide();
+    $(".js-palette-select-screen").hide();
+    $(".js-palette-display-screen").hide();
+    $(".js-extracted-colors-section").hide();
     handleGetStarted();
 }  
 
     // Event handler for image address form
 function handleImageLinkButton(){
-    $('#js-find-colors').on('click',function(event){
+    $("#js-find-colors").on("click",function(event){
         event.preventDefault();
-        let imageLink = $('.js-image-link-entry').val();
+        let imageLink = $(".js-image-link-entry").val();
         extractColors(extractionUrl,imageLink,extractionAuthorization); 
-        $('.js-image-link-entry').val(''); 
-        $('.js-extracted-colors-section').show();
+        $(".js-image-link-entry").val(""); 
+        $(".js-extracted-colors-section").show();
     });
 }
 
