@@ -7,16 +7,16 @@ This is intended to assist the visually impaired as well as the sighted in coord
 
 ## Screenshots
 Instructions Page
-![Instructions Page](https://docs.google.com/uc?export=download&id=1nFvvHnbzKnKxC6VQGIg8m-bK5HdWRhgw)
+![Instructions Page](screenshots/instructionsScreen.png)
 
 Image Input Page
-![Image Input Page](https://docs.google.com/uc?export=download&id=1E0do_rgdqNZTP3ckALnrwb3QtdQ0zq-g)
+![Image Input Page](screenshots/linkScreen.png)
 
 Extraction View
-![Extraction View](https://docs.google.com/uc?export=download&id=1AYD-SelzQbu-BZjeUBM28FOI52-Fh_t0)
+![Extraction View](screenshots/extractedColors.png)
 
 Palette Page
-![Palette Page](https://docs.google.com/uc?export=download&id=1oVF15eUdTJBnb41xE42AcSE-61fIA8_i)
+![Palette Page](screenshots/paletteScreen.png)
 
 
 ### Tech
