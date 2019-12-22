@@ -7,16 +7,16 @@ This is intended to assist the visually impaired as well as the sighted in coord
 
 ## Screenshots
 Instructions Page
-![Instructions Page](https://drive.google.com/file/d/1nFvvHnbzKnKxC6VQGIg8m-bK5HdWRhgw/view?usp=sharing)
+![Instructions Page](https://drive.google.com/uc?id=1nFvvHnbzKnKxC6VQGIg8m-bK5HdWRhgw)
 
 Image Input Page
-![Image Input Page](https://drive.google.com/file/d/1E0do_rgdqNZTP3ckALnrwb3QtdQ0zq-g/view?usp=sharing)
+![Image Input Page](https://drive.google.com/uc?id=1E0do_rgdqNZTP3ckALnrwb3QtdQ0zq-g)
 
 Extraction View
-![Extraction View](https://drive.google.com/file/d/1AYD-SelzQbu-BZjeUBM28FOI52-Fh_t0/view?usp=sharing)
+![Extraction View](https://drive.google.com/uc?id=1AYD-SelzQbu-BZjeUBM28FOI52-Fh_t0)
 
 Palette Page
-![Palette Page](https://drive.google.com/file/d/1oVF15eUdTJBnb41xE42AcSE-61fIA8_i/view?usp=sharing)
+![Palette Page](https://drive.google.com/uc?id=1oVF15eUdTJBnb41xE42AcSE-61fIA8_i)
 
 ### Tech
 ThreadsAI uses HTML, CSS, JavaScript, and jQuery.
