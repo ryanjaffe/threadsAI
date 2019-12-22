@@ -3,6 +3,8 @@
 const extractionUrl = 'https://api.imagga.com/v2/colors';
 const extractionAuthorization = 'Basic YWNjXzNkNzBmYTkxNjFlMzAwOTo5OWRlNTExN2E0MmJkMzY5NDMzM2UzZjYzMGZhYzQ0Mw==';
 
+    // Get colors from Imagga API and pass values into 
+    // displayResults and create palette
 function extractColors(extractionUrl,imageLink,extractionAuthorization) {
     const url = `${extractionUrl}?image_url=${imageLink}&extract_overall_colors=0
     &overall_count=3`;
@@ -31,6 +33,9 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
     });    
 }
 
+    // Populate the extraction section with color names
+    // and divs that display the color for each extracted 
+    // color
 function displayResults(responseJson) {
     $('.js-image-link-entry').empty();
     for (let i=0; i<responseJson.result.colors.foreground_colors.length; i++) {
@@ -47,7 +52,7 @@ function displayResults(responseJson) {
     provideExtractionColor();
 }
 
-
+    // Use KolorWheel library to create each palette
 function createPalette(responseJson){
     (new KolorWheel(`${responseJson.result.colors.foreground_colors[0].html_code}`)).abs(0,-1,-1,$(".js-color-palette-1")).each(function(elm){
         elm.css("background",this.getHex());
@@ -97,6 +102,7 @@ function createPalette(responseJson){
 
 }
 
+    // Switch to palette view
 function handleExtractColorsButton(){
     $('.js-colors-approved').on('click',function(event){
         $('.js-instructions-screen').hide();
@@ -105,6 +111,7 @@ function handleExtractColorsButton(){
     });
 }
 
+    // Switch to Instructions view
 function handleInstructionsButton(){
     $('.js-instructions-button').on('click',function(event){
         $('.js-instructions-screen').show();
@@ -113,7 +120,7 @@ function handleInstructionsButton(){
     });
 }
 
-
+    // Switch back to add image screen from other views
 function handlePhotoButton(){
     $('.js-photo-button').on('click',function(event){
         $('.js-instructions-screen').hide();
@@ -122,6 +129,7 @@ function handlePhotoButton(){
     });
 }
 
+    // Go to image screen
 function handleGetStarted(){
     $('.js-get-started-button').on('click',function(event){
         $('.js-instructions-screen').hide();
@@ -132,6 +140,7 @@ function handleGetStarted(){
     });
 }
 
+    // Render the page
 function renderHome(){
     $('.js-photo-screen').hide();
     $('.js-extraction-preview-screen').hide();
@@ -141,6 +150,7 @@ function renderHome(){
     handleGetStarted();
 }  
 
+    // Event handler for image address form
 function handleImageLinkButton(){
     $('#js-find-colors').on('click',function(event){
         event.preventDefault();
@@ -151,6 +161,7 @@ function handleImageLinkButton(){
     });
 }
 
+    // Pull rgb value of color from extraction view
 function provideExtractionColor(){
     $( ".js-click-for-extraction-rgb" ).click(function() {
         let rgbCode = $(this).css("background-color");
@@ -158,6 +169,7 @@ function provideExtractionColor(){
     })
 }
 
+    // Pull rgb value of color from palettes
 function providePaletteColor(){
     $( ".js-click-for-palette-rgb" ).click(function() {
         let rgbCode = $(this).css("background-color");
@@ -165,6 +177,7 @@ function providePaletteColor(){
     })
 }
 
+    // Start app
 $(function() {
     renderHome();
     handleImageLinkButton();
