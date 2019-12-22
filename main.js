@@ -155,6 +155,8 @@ function handleImageLinkButton(){
     $("#js-find-colors").on("click",function(event){
         event.preventDefault();
         let imageLink = $(".js-image-link-entry").val();
+        $(".js-extraction-list").empty()
+        $(".js-extracted-colors-display").empty()
         extractColors(extractionUrl,imageLink,extractionAuthorization); 
         $(".js-image-link-entry").val(""); 
         $(".js-extracted-colors-section").show();
