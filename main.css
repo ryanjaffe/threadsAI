@@ -3,6 +3,11 @@
 }
 
 @media screen and (min-width:200px) and (max-width:599px){
+
+    html{
+        height: 100%;
+    }
+
     body {
         margin: 0;
         border-left: 30px solid #63D2D4;
@@ -12,6 +17,7 @@
         padding-left: 10px;
         padding-right: 10px;
         background-color: #F4F5ED;
+        min-height: 100%;
     }
     
     h1{
@@ -200,6 +206,11 @@
 }
 
 @media screen and (min-width:600px) and (max-width:991px){
+
+    html{
+        height: 100%;
+    }
+
     body {
         margin: 0px;
         border-left: 80px solid #63D2D4;
@@ -209,6 +220,7 @@
         padding-left: 30px;
         padding-right: 30px;
         background-color: #F4F5ED;
+        min-height: 100%;
     }
     
     h1{
