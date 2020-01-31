@@ -175,7 +175,8 @@ function provideExtractionColor(){
 function providePaletteColor(){
     $( ".js-click-for-palette-rgb" ).click(function() {
         let rgbCode = $(this).css("background-color");
-        $(".provide-palette-rgb").html(`${rgbCode}`);
+        $(".palette-color-tile span").html('');
+        $(this).html(`<span>${rgbCode}</span>`);
     })
 }
 
