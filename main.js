@@ -29,7 +29,7 @@ function extractColors(extractionUrl,imageLink,extractionAuthorization) {
         })
         .catch(err => {
             $(".js-error-message").show();
-            $(".js-error-message").text(`Something went wrong: ${err.message}`);
+            $(".js-error-message").html(`Something went wrong: ${err.message}`);
     });    
 }
 
@@ -167,7 +167,8 @@ function handleImageLinkButton(){
 function provideExtractionColor(){
     $( ".js-click-for-extraction-rgb" ).click(function() {
         let rgbCode = $(this).css("background-color");
-        $(".provide-extraction-rgb").html(`${rgbCode}`);
+        $(".extracted-color-tile span").html('');
+        $(this).html(`<span>${rgbCode}</span>`);
     })
 }
 

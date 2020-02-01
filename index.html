@@ -77,7 +77,7 @@
             <h2 class="photo-subheading">
                 Submit a link to the image!
             </h2>
-
+            <p class="js-error-message"></p>
             <form class="image-link-form js-image-link-form">
                     <label for="image-link-entry">Enter an image address:</label>
                     <input type="text" name="image-link-entry" id="image-link-entry" 
@@ -89,7 +89,8 @@
             <p class = "provide-extraction-rgb"></p>
 
             <section class="extracted-colors-section js-extracted-colors-section">
-                <h2>These colors were extracted</h2>
+                <h2>These colors were extracted.</h2>
+                <p>Click on the color for the RGB value.</p>
                 <div class="extraction-container">
                     <ul class="extraction-list js-extraction-list"></ul>
                     <div class="extracted-colors-display js-extracted-colors-display"></div>
@@ -105,6 +106,7 @@
         </section>
         <section class="palette-display-screen js-palette-display-screen">
             <h2>Here are your recommendations</h2>
+            <p>Click on the color for the RGB value.</p>
             <p class = "provide-palette-rgb"></p>
             <div class="container ">
                 <div class="container palette-group">
@@ -390,7 +392,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-    <script src="kolorwheel.js"></script>
+    <script src="http://linkbroker.hu/stuff/kolorwheel.js/KolorWheel.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

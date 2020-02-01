@@ -2,8 +2,6 @@
     box-sizing: border-box;
 }
 
-@media screen and (min-width:200px){
-
     html{
         height: 100%;
     }
@@ -48,6 +46,7 @@
     }
 
     p{
+        text-align: center;
         font-size: 20px;
         font-family: 'Roboto', sans-serif;
         line-height: 150%;
@@ -135,11 +134,22 @@
     }
 
     .extracted-color-tile{
-        width: 30%;
-        height: 30%;
+        position: relative;
+        width: 60px;
+        height: 60px;
         border: 2px solid black;
-        margin: 3%;
-        border-radius: 50%;
+        margin: 10%;
+    }
+
+    .extracted-color-tile span{
+        position: absolute;
+        top: -24px;
+        font-size: 18px;
+        background-color: #E50B2C;
+        color: white;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
     }
 
     .extracted-color-tile:active, .extracted-color-tile:hover{
@@ -158,8 +168,8 @@
 
     .palette-color-tile{
         position: relative;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
     }
 
     .palette-color-tile span{
@@ -174,8 +184,8 @@
     }
 
     .palette-color-tile:active, .palette-color-tile:hover{
-        width: 125px;
-        height: 125px;
+        width: 60px;
+        height: 60px;
         transition-duration: 0.5s;
         transition-timing-function: linear;
     }
@@ -195,7 +205,7 @@
     .palette-display-screen .stylized-button{
         background-color: #E50B2C;
         color: #ffffff;
-        font-size: 30px;
+        font-size: 22px;
         font-family: 'Roboto', sans-serif;
         border-radius: 15px;
         width: 90%;
@@ -206,7 +216,6 @@
         margin-top: 10px;
         margin-bottom: 0px;
     }
-}
 
 @media screen and (min-width:600px){
 
@@ -269,6 +278,11 @@
         font-size: 28px;
     }
 
+    .extracted-color-tile{
+        width: 80px;
+        height: 80px;
+    }
+
     .extracted-color-tile:active, .extracted-color-tile:hover{
         width: 38%;
         height: 38%;
@@ -296,6 +310,7 @@
     }
 
     .palette-display-screen .stylized-button{
+        font-size: 30px;
         width: 80%;
     }
 }
@@ -394,8 +409,9 @@
     }
 
     .extracted-color-tile{
-        width: 28%;
-        height: 28%;
+        width: 110px;
+        height: 110px;
+        margin-bottom: 3%;
     }
 
     .extracted-color-text{
