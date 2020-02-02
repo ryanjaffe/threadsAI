@@ -118,8 +118,8 @@
     }
 
     .extraction-list li{
-        margin-top: 16.5%;
-        margin-bottom: 16.5%;
+        margin-top: 16%;
+        margin-bottom: 30%;
     }
 
     .extracted-color-text{
@@ -138,23 +138,23 @@
         width: 60px;
         height: 60px;
         border: 2px solid black;
-        margin: 10%;
+        margin: 10px;
     }
 
     .extracted-color-tile span{
         position: absolute;
         top: -24px;
-        font-size: 18px;
+        font-size: 14px;
         background-color: #E50B2C;
         color: white;
         font-weight: bold;
         font-family: 'Roboto', sans-serif;
-        width: 100%;
+        width: 115px;
     }
 
     .extracted-color-tile:active, .extracted-color-tile:hover{
-        width: 42%;
-        height: 42%;
+        width: 90px;
+        height: 90px;
         transition-duration: 0.35s;
         transition-timing-function: linear;
     }
@@ -175,12 +175,13 @@
     .palette-color-tile span{
         position: absolute;
         top: -20px;
-        font-size: 18px;
+        left: -35px;
+        font-size: 14px;
         background-color: #E50B2C;
         color: white;
         font-weight: bold;
         font-family: 'Roboto', sans-serif;
-        width: 120px;
+        width: 115px;
     }
 
     .palette-color-tile:active, .palette-color-tile:hover{
