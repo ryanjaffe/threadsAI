@@ -52,6 +52,17 @@
         line-height: 150%;
     }
 
+    .sample-address{
+        word-wrap: break-word;
+    }
+
+    .sample-image{
+        display: block;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     li{
         font-size: 20px;
         font-family: 'Roboto', sans-serif;
@@ -118,8 +129,8 @@
     }
 
     .extraction-list li{
-        margin-top: 16%;
-        margin-bottom: 30%;
+        margin-top: 30%;
+        margin-bottom: 32%;
     }
 
     .extracted-color-text{
@@ -138,7 +149,9 @@
         width: 60px;
         height: 60px;
         border: 2px solid black;
-        margin: 10px;
+        margin-left: 10px;
+        margin-bottom: 30%;
+        margin-top: 30%;
     }
 
     .extracted-color-tile span{
@@ -283,6 +296,12 @@
         width: 80px;
         height: 80px;
     }
+
+    .extraction-list li{
+        margin-top: 30%;
+        margin-bottom: 50%;
+    }
+
 
     .extracted-color-tile:active, .extracted-color-tile:hover{
         width: 38%;
